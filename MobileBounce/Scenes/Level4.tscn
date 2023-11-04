@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=3 uid="uid://sbxoi7fqw263"]
+
+[ext_resource type="Script" path="res://Scenes/Level4.gd" id="1_65imo"]
+[ext_resource type="PackedScene" uid="uid://du43fdaigihlk" path="res://Scenes/Crate.tscn" id="4_g4520"]
+[ext_resource type="PackedScene" uid="uid://dyewqa6np00c4" path="res://Scenes/Bomb.tscn" id="5_fp05u"]
+[ext_resource type="PackedScene" uid="uid://c8e16qbagv0ci" path="res://Scenes/Player.tscn" id="6_bxq37"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ybda"]
+font_size = 21
+
+[node name="Level4" type="Node2D"]
+script = ExtResource("1_65imo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 216.0
+offset_top = 8.0
+offset_right = 359.0
+offset_bottom = 31.0
+text = "Level 4"
+label_settings = SubResource("LabelSettings_2ybda")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Collisions" type="Node" parent="."]
+
+[node name="OuterWall" type="StaticBody2D" parent="Collisions"]
+
+[node name="OuterWall" type="CollisionPolygon2D" parent="Collisions/OuterWall"]
+polygon = PackedVector2Array(0, 0, 0, 1024, 576, 1024, 577, 0, 7, 0, -6, -7, 584, -5, 582, 1028, -9, 1029, -6, -4)
+
+[node name="Crates" type="Node" parent="."]
+
+[node name="Crate" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(160, 592)
+
+[node name="Crate2" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(288, 672)
+
+[node name="Crate11" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(104, 872)
+
+[node name="Crate13" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(336, 856)
+
+[node name="Crate17" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(192, 680)
+
+[node name="Crate3" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(496, 600)
+rotation = -0.127409
+
+[node name="Crate16" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(360, 192)
+rotation = -0.127409
+
+[node name="Crate4" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(392, 72)
+rotation = -0.507891
+
+[node name="Crate15" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(256, 592)
+rotation = -0.507891
+
+[node name="Crate5" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(75, 88)
+rotation = 0.139626
+
+[node name="Crate6" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(216, 176)
+rotation = 0.0872665
+
+[node name="Crate14" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(104, 656)
+rotation = 0.0872665
+
+[node name="Crate7" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(432, 328)
+rotation = 0.507891
+
+[node name="Crate8" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(456, 904)
+rotation = 0.253073
+
+[node name="Crate18" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(152, 752)
+rotation = 0.253073
+
+[node name="Crate9" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(120, 424)
+rotation = -0.0349066
+
+[node name="Crate10" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(520, 192)
+
+[node name="Crate12" parent="Crates" instance=ExtResource("4_g4520")]
+position = Vector2(248, 512)
+rotation = 0.888373
+
+[node name="Bombs" type="Node" parent="."]
+
+[node name="Bomb" parent="Bombs" instance=ExtResource("5_fp05u")]
+position = Vector2(376, 680)
+
+[node name="Bomb4" parent="Bombs" instance=ExtResource("5_fp05u")]
+position = Vector2(528, 792)
+
+[node name="Bomb2" parent="Bombs" instance=ExtResource("5_fp05u")]
+position = Vector2(384, 968)
+
+[node name="Bomb3" parent="Bombs" instance=ExtResource("5_fp05u")]
+position = Vector2(56, 208)
+
+[node name="Player" parent="." instance=ExtResource("6_bxq37")]
+position = Vector2(260, 290)

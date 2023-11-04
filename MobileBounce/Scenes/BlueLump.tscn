@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3cq6kaqx3pk"]
+
+[ext_resource type="Texture2D" uid="uid://cdol5mcl0fe3y" path="res://blueSideyBit.png" id="1_dwg1a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6s2p1"]
+
+[node name="BlueLump" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dwg1a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 0)
+scale = Vector2(0.909528, 1.29769)
+shape = SubResource("CircleShape2D_6s2p1")

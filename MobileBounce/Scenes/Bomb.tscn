@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyewqa6np00c4"]
+
+[ext_resource type="Texture2D" uid="uid://g2hbfxpocmni" path="res://badBall.png" id="1_5op3y"]
+[ext_resource type="Script" path="res://Scenes/Bomb.gd" id="1_grwgw"]
+[ext_resource type="Texture2D" uid="uid://d4aca4chja4cu" path="res://asplode.png" id="3_1p5iw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_omh78"]
+friction = 0.0
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6xd4"]
+radius = 28.0713
+
+[node name="Bomb" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_omh78")
+gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_grwgw")
+
+[node name="BombSprite" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_5op3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j6xd4")
+
+[node name="AsplodeSprite" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(3, 3)
+texture = ExtResource("3_1p5iw")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

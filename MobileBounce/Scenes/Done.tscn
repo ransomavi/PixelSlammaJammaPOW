@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3o26bquf4stw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ybda"]
+font_size = 21
+
+[node name="Done" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 216.0
+offset_top = 288.0
+offset_right = 359.0
+offset_bottom = 321.0
+text = "That's It. 
+That's The Game."
+label_settings = SubResource("LabelSettings_2ybda")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Collisions" type="Node" parent="."]
+
+[node name="OuterWall" type="StaticBody2D" parent="Collisions"]
+
+[node name="OuterWall" type="CollisionPolygon2D" parent="Collisions/OuterWall"]
+polygon = PackedVector2Array(0, 0, 0, 1024, 576, 1024, 577, 0, 7, 0, -6, -7, 584, -5, 582, 1028, -9, 1029, -6, -4)
+
+[node name="Crates" type="Node" parent="."]
+
+[node name="Node" type="Node" parent="."]

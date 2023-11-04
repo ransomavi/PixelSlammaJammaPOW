@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjvsma2cnlf77"]
+
+[ext_resource type="Texture2D" uid="uid://c2qkwlgxvmwhq" path="res://blueCross.png" id="1_m236t"]
+
+[node name="BlueCross" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("1_m236t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(5, 5)
+polygon = PackedVector2Array(0, -9.8, 0.8, -9.8, 1.4, -9.2, 1.4, -1.4, 9, -1.4, 9.8, -0.8, 9.8, 1.4, 9, 2.2, 1.4, 2.2, 1.4, 9.2, 0.6, 9.8, 0, 9.8, -0.8, 9, -0.8, 2.2, -9.2, 2.2, -9.8, 1.4, -9.8, -0.8, -9, -1.4, -0.8, -1.4, -0.8, -9.2)

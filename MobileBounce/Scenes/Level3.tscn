@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://yl75g3lwu41l"]
+
+[ext_resource type="Script" path="res://Scenes/Level3.gd" id="1_tsrah"]
+[ext_resource type="PackedScene" uid="uid://cjvsma2cnlf77" path="res://Scenes/BlueCross.tscn" id="2_j7ju3"]
+[ext_resource type="PackedScene" uid="uid://cyjdiv7qi6l54" path="res://Scenes/BluePlatform.tscn" id="2_nak60"]
+[ext_resource type="PackedScene" uid="uid://du43fdaigihlk" path="res://Scenes/Crate.tscn" id="3_hgjpv"]
+[ext_resource type="PackedScene" uid="uid://dyewqa6np00c4" path="res://Scenes/Bomb.tscn" id="4_i0aq0"]
+[ext_resource type="PackedScene" uid="uid://c8e16qbagv0ci" path="res://Scenes/Player.tscn" id="5_7d8b3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ybda"]
+font_size = 21
+
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_tsrah")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 216.0
+offset_top = 8.0
+offset_right = 359.0
+offset_bottom = 31.0
+text = "Level 3"
+label_settings = SubResource("LabelSettings_2ybda")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Collisions" type="Node" parent="."]
+
+[node name="OuterWall" type="StaticBody2D" parent="Collisions"]
+
+[node name="OuterWall" type="CollisionPolygon2D" parent="Collisions/OuterWall"]
+polygon = PackedVector2Array(0, 0, 0, 1024, 576, 1024, 577, 0, 7, 0, -6, -7, 584, -5, 582, 1028, -9, 1029, -6, -4)
+
+[node name="BlueCross" parent="Collisions" instance=ExtResource("2_j7ju3")]
+position = Vector2(280, 504)
+
+[node name="BluePlatform" parent="Collisions" instance=ExtResource("2_nak60")]
+position = Vector2(288, 984)
+rotation = -1.5708
+scale = Vector2(3, 3)
+
+[node name="Crates" type="Node" parent="."]
+
+[node name="Crate" parent="Crates" instance=ExtResource("3_hgjpv")]
+position = Vector2(112, 741)
+
+[node name="Crate2" parent="Crates" instance=ExtResource("3_hgjpv")]
+position = Vector2(392, 792)
+
+[node name="Crate11" parent="Crates" instance=ExtResource("3_hgjpv")]
+position = Vector2(208, 960)
+
+[node name="Crate3" parent="Crates" instance=ExtResource("3_hgjpv")]
+position = Vector2(491, 444)
+rotation = -0.127409
+
+[node name="Crate4" parent="Crates" instance=ExtResource("3_hgjpv")]
+position = Vector2(392, 72)
+rotation = -0.507891
+
+[node name="Crate5" parent="Crates" instance=ExtResource("3_hgjpv")]
+position = Vector2(75, 88)
+rotation = 0.139626
+
+[node name="Crate6" parent="Crates" instance=ExtResource("3_hgjpv")]
+position = Vector2(128, 288)
+rotation = 0.0872665
+
+[node name="Crate7" parent="Crates" instance=ExtResource("3_hgjpv")]
+position = Vector2(512, 600)
+rotation = 0.507891
+
+[node name="Crate8" parent="Crates" instance=ExtResource("3_hgjpv")]
+position = Vector2(478, 945)
+rotation = 0.253073
+
+[node name="Crate9" parent="Crates" instance=ExtResource("3_hgjpv")]
+position = Vector2(368, 360)
+
+[node name="Crate10" parent="Crates" instance=ExtResource("3_hgjpv")]
+position = Vector2(520, 192)
+
+[node name="Crate12" parent="Crates" instance=ExtResource("3_hgjpv")]
+position = Vector2(80, 608)
+
+[node name="Bombs" type="Node" parent="."]
+
+[node name="Bomb" parent="Bombs" instance=ExtResource("4_i0aq0")]
+position = Vector2(376, 680)
+
+[node name="Bomb2" parent="Bombs" instance=ExtResource("4_i0aq0")]
+position = Vector2(384, 968)
+
+[node name="Bomb3" parent="Bombs" instance=ExtResource("4_i0aq0")]
+position = Vector2(56, 208)
+
+[node name="Player" parent="." instance=ExtResource("5_7d8b3")]
+position = Vector2(260, 290)

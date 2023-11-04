@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd8aiqgw1e4kr"]
+
+[ext_resource type="Texture2D" uid="uid://bvujwcss57fc5" path="res://whiteball.png" id="1_ogoap"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2bebf"]
+
+[node name="WhiteBall" type="RigidBody2D"]
+scale = Vector2(0.8, 0.8)
+mass = 0.2
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ogoap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2bebf")

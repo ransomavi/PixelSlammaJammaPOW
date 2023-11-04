@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://bji4v5iah4p2"]
+
+[ext_resource type="Script" path="res://Scenes/Level5.gd" id="1_xu3qf"]
+[ext_resource type="PackedScene" uid="uid://du43fdaigihlk" path="res://Scenes/Crate.tscn" id="2_xrbtl"]
+[ext_resource type="PackedScene" uid="uid://dyewqa6np00c4" path="res://Scenes/Bomb.tscn" id="3_vkige"]
+[ext_resource type="PackedScene" uid="uid://c8e16qbagv0ci" path="res://Scenes/Player.tscn" id="4_ps8tw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ybda"]
+font_size = 21
+
+[node name="Level5" type="Node2D"]
+script = ExtResource("1_xu3qf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 216.0
+offset_top = 8.0
+offset_right = 359.0
+offset_bottom = 31.0
+text = "Level 5"
+label_settings = SubResource("LabelSettings_2ybda")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Collisions" type="Node" parent="."]
+
+[node name="OuterWall" type="StaticBody2D" parent="Collisions"]
+
+[node name="OuterWall" type="CollisionPolygon2D" parent="Collisions/OuterWall"]
+polygon = PackedVector2Array(0, 0, 0, 1024, 576, 1024, 577, 0, 7, 0, -6, -7, 584, -5, 582, 1028, -9, 1029, -6, -4)
+
+[node name="Crates" type="Node" parent="."]
+
+[node name="Crate" parent="Crates" instance=ExtResource("2_xrbtl")]
+position = Vector2(240, 824)
+
+[node name="Crate2" parent="Crates" instance=ExtResource("2_xrbtl")]
+position = Vector2(88, 752)
+
+[node name="Crate3" parent="Crates" instance=ExtResource("2_xrbtl")]
+position = Vector2(200, 704)
+rotation = -0.127409
+
+[node name="Bombs" type="Node" parent="."]
+
+[node name="Bomb" parent="Bombs" instance=ExtResource("3_vkige")]
+position = Vector2(376, 680)
+
+[node name="Bomb4" parent="Bombs" instance=ExtResource("3_vkige")]
+position = Vector2(528, 792)
+
+[node name="Bomb2" parent="Bombs" instance=ExtResource("3_vkige")]
+position = Vector2(384, 968)
+
+[node name="Bomb5" parent="Bombs" instance=ExtResource("3_vkige")]
+position = Vector2(56, 560)
+
+[node name="Bomb6" parent="Bombs" instance=ExtResource("3_vkige")]
+position = Vector2(464, 88)
+
+[node name="Bomb7" parent="Bombs" instance=ExtResource("3_vkige")]
+position = Vector2(496, 328)
+
+[node name="Bomb8" parent="Bombs" instance=ExtResource("3_vkige")]
+position = Vector2(176, 64)
+
+[node name="Bomb9" parent="Bombs" instance=ExtResource("3_vkige")]
+position = Vector2(496, 496)
+
+[node name="Bomb10" parent="Bombs" instance=ExtResource("3_vkige")]
+position = Vector2(136, 968)
+
+[node name="Bomb11" parent="Bombs" instance=ExtResource("3_vkige")]
+position = Vector2(432, 808)
+
+[node name="Bomb12" parent="Bombs" instance=ExtResource("3_vkige")]
+position = Vector2(144, 496)
+
+[node name="Bomb3" parent="Bombs" instance=ExtResource("3_vkige")]
+position = Vector2(56, 208)
+
+[node name="Player" parent="." instance=ExtResource("4_ps8tw")]
+position = Vector2(264, 328)

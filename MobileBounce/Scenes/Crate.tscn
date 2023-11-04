@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://du43fdaigihlk"]
+
+[ext_resource type="Texture2D" uid="uid://c2fg82rlrrbty" path="res://crate.png" id="1_mab40"]
+[ext_resource type="Script" path="res://Scenes/Crate.gd" id="1_p60wa"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5my4b"]
+friction = 0.0
+bounce = 0.2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d30wo"]
+size = Vector2(18, 18)
+
+[node name="Crate" type="RigidBody2D"]
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_5my4b")
+gravity_scale = 0.0
+max_contacts_reported = 2
+contact_monitor = true
+script = ExtResource("1_p60wa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_mab40")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_d30wo")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
